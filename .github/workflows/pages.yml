@@ -23,8 +23,17 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
-        run: npm ci
+        # use `npm install` so CI doesn't fail if package-lock.json is absent
+        run: npm install --prefer-offline --no-audit --no-fund
 
       - name: Build
         run: npm run build
