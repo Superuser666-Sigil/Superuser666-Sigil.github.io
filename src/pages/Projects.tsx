@@ -4,6 +4,7 @@ const projects = [
     {
         name: 'SigilDERG-Finetuner',
         description: 'Model finetuner for the SigilDERG Ecosystem',
+        excerpt: 'Complete pipeline for fine-tuning LLaMA models on Rust code datasets using 4-bit quantization and LoRA adapters.',
         repo: 'Superuser666-Sigil/SigilDERG-Finetuner',
         languages: [
             { name: 'Jupyter Notebook', percent: 89.6 },
@@ -14,6 +15,7 @@ const projects = [
     {
         name: 'sigil-mmf-codex-priv',
         description: 'Private repository for SigilDERG MMF Codex',
+        excerpt: 'Secure, cryptographically-audited MMF runtime (mmf_sigil) with LOA enforcement, Ed25519 signing, and encrypted canonical storage.',
         repo: 'Superuser666-Sigil/sigil-mmf-codex-priv',
         languages: [
             { name: 'Rust', percent: 99.8 },
@@ -23,6 +25,7 @@ const projects = [
     {
         name: 'SigilDERG-Custom-MCP',
         description: 'This is a standalone, code-aware custom MCP server for local or remote use',
+        excerpt: 'Production-ready MCP server with hybrid code search, semantic embeddings, and an admin API for indexing and search.',
         repo: 'Superuser666-Sigil/SigilDERG-Custom-MCP',
         languages: [
             { name: 'Python', percent: 48.7 },
@@ -37,6 +40,7 @@ const projects = [
     {
         name: 'SigilDERG-Lambda-Package',
         description: 'Documentation and setup scripts for evaluation of the SigilDERG ecosystem',
+        excerpt: 'Reproducible HumanEval-Rust evaluation and provisioning scripts for running SigilDERG evaluations on Lambda Labs.',
         repo: 'Superuser666-Sigil/SigilDERG-Lambda-Package',
         languages: [
             { name: 'Shell', percent: 53.4 },
@@ -46,6 +50,7 @@ const projects = [
     {
         name: 'SigilDERG-Data_Production',
         description: 'SigilDERG Data Production is an enterprise-grade Rust pipeline that crawls crates, runs rigorous scans (Clippy, Geiger, license checks), and generates instruction-style JSONL shards. It features semantic chunking, configurable splits, observability, and seamless SigilDERG ecosystem integration.',
+        excerpt: 'Enterprise-grade Rust pipeline that analyzes crates and generates high-quality instruction-style JSONL datasets for training.',
         repo: 'Superuser666-Sigil/SigilDERG-Data_Production',
         languages: [
             { name: 'Python', percent: 99.3 },
@@ -55,6 +60,7 @@ const projects = [
     {
         name: 'human-eval-Rust',
         description: 'Rust-centric fork of OpenAI\'s HumanEval',
+        excerpt: 'Evaluation harness for Rust code generation models providing sandboxed HumanEval-style tests and detailed metrics.',
         repo: 'Superuser666-Sigil/human-eval-Rust',
         languages: [
             { name: 'Python', percent: 100 }

@@ -8,6 +8,7 @@ interface Language {
 interface Project {
     name: string
     description: string
+    excerpt?: string
     repo: string
     languages: Language[]
 }
@@ -34,18 +35,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     }
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+        <a
+            href={`https://github.com/${project.repo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-offset-2"
+        >
             <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">{project.name}</h3>
-                <a
-                    href={`https://github.com/${project.repo}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-700"
-                >
-                    <Github className="h-5 w-5" />
-                </a>
+                <Github className="h-5 w-5 text-gray-500" />
             </div>
+            {project.excerpt ? (
+                <p className="text-gray-700 italic mb-2">{project.excerpt}</p>
+            ) : null}
             <p className="text-gray-600 mb-4">{project.description}</p>
             <div>
                 <h4 className="text-sm font-medium text-gray-900 mb-2">Languages:</h4>
@@ -61,7 +63,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     ))}
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 

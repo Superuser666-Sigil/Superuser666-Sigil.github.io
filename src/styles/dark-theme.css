@@ -1,0 +1,87 @@
+:root {
+  /* Graphite + Electric Blue palette (option 3) */
+  --color-bg: #0B0F14; /* page background */
+  --color-surface: #0F1318; /* cards, nav */
+  --color-surface-2: #171A1F; /* elevated surfaces */
+  --color-accent: #0A83A8; /* darker electric blue for good contrast */
+  --color-accent-2: #066B8A; /* hover/darker accent */
+  --color-highlight: #3DD6FF; /* bright highlight */
+  --text-primary: #E6F7FF; /* main text */
+  --text-secondary: #A6D9F6; /* secondary text */
+  --muted: #7A98A8; /* muted labels */
+  --border: #1B2430;
+  --shadow: 0 6px 18px rgba(2,8,15,0.6);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  background-color: var(--color-bg);
+  color: var(--text-primary);
+}
+
+/* Make global background & base text follow the theme */
+html[data-theme="dark"],
+body[data-theme="dark"],
+body {
+  background-color: var(--color-bg);
+  color: var(--text-primary);
+}
+
+/* Override common Tailwind utility classes used in the app so components styled with
+   Tailwind's neutral classes adapt to dark theme without changing every class. */
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--color-surface) !important;
+}
+
+/* Cover common light background utilities used in this project */
+[data-theme="dark"] .bg-gray-50,
+[data-theme="dark"] .bg-gray-100,
+[data-theme="dark"] .bg-gray-200,
+[data-theme="dark"] .bg-neutral-100 {
+  background-color: var(--color-bg) !important;
+}
+
+[data-theme="dark"] .shadow-md,
+[data-theme="dark"] .shadow-lg,
+[data-theme="dark"] .shadow-sm {
+  box-shadow: var(--shadow) !important;
+}
+
+[data-theme="dark"] .text-gray-900 { color: var(--text-primary) !important; }
+[data-theme="dark"] .text-gray-800 { color: var(--text-primary) !important; }
+[data-theme="dark"] .text-gray-700 { color: var(--text-secondary) !important; }
+[data-theme="dark"] .text-gray-600 { color: var(--muted) !important; }
+[data-theme="dark"] .text-gray-500 { color: var(--muted) !important; }
+
+[data-theme="dark"] .border-gray-200 { border-color: var(--border) !important; }
+[data-theme="dark"] .border-gray-300 { border-color: var(--border) !important; }
+
+/* Accent utilities */
+[data-theme="dark"] .bg-indigo-500,
+[data-theme="dark"] .bg-indigo-600 {
+  background-color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .bg-indigo-700 {
+  background-color: var(--color-accent-2) !important;
+}
+
+/* Ensure buttons using text-white remain readable on the themed accent */
+[data-theme="dark"] .bg-indigo-600.text-white,
+[data-theme="dark"] .bg-indigo-600.text-white:focus,
+[data-theme="dark"] .bg-indigo-700.text-white {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] a,
+[data-theme="dark"] a:hover { color: var(--color-accent-2); }
+
+/* Buttons and focus rings (subtle cyan accent) */
+[data-theme="dark"] .focus\:ring-2:focus { box-shadow: 0 0 0 4px rgba(10,131,168,0.12) !important; }
+
+/* Small helpers for elevated surfaces */
+.elevated { background-color: var(--color-surface-2); border: 1px solid rgba(255,255,255,0.03); }
+
+/* Make SVG icons inherit themed text color */
+[data-theme="dark"] svg { color: inherit; }
